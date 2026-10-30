@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana do Meio Ambiente 2026 - IFSULDEMINAS Campus Machado</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!--Barra de acessibilidade-->
+    <div class="accessibility-bar" aria-label="Controles de acessibilidade">
+        <div class="container">
+            <button id="btn-contrast" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+            <button id="btn-aum-fonte" aria-label="Aumentar Fonte">A+</button>
+            <button id="btn-dim-fonte" aria-label="Diminuir Fonte">A-</button>
+        </div>
+    </div>
+    <!--Cabeçalho-->
+    <header class="header">
+        <div class="container nav-container">
+            <img src="assets/img/logo-if.png" alt="Logotipo Oficial do IFSULDEMINAS Campus Machado" class="logo">
+
+            <!--Menu-->
+            <nav aria-label="Navegação Principal">
+                <ul class="nav-links">
+                    <li><a href="#inicio"> Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#programacao">Programação</a></li>
+                    <li><a href="#palestrantes">Palestrantes</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <video class="hero-video" autoplay muted loop playsinline poster="assets/img/floresta-poster.jpg"
+                aria-hidden="true">
+                <source src="assets/video/floresta.mp4" type="video/mp4">
+            </video>
+
+            <div class="container hero-content">
+                <span class="badge">Edição 2026</span>
+                <h1>SEMANA DO MEIO AMBIENTE</h1>
+                <p class="subtitle">IFSULDEMINAS - Campus Machado</p>
+                <p class="tagline">"Sustentabilidade e Inovação para o Futuro"</p>
+
+                <div class="hero-buttons">
+                    <a href="#programacao" class="btn btn-primary">Ver Programação</a>
+                    <a href="#contato" class="btn btn-secondary">Inscreva-se</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre o Evento -->
+        <section id="sobre" class="section sobre-section">
+            <div class="container">
+                <h2>SOBRE O EVENTO</h2>
+                <div class="sobre-content">
+                    <p>O objetivo principal é criar um site institucional para divulgar a Semana do Meio Ambiente do
+                        IFSULDEMINAS - Campus Machado, apresentando de forma clara e organizada as informações do
+                        evento, programação, palestrantes e inscrições[cite: 1, 2].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programação -->
+        <section id="programacao" class="section programacao-section">
+            <div class="container">
+                <h2>DESTAQUES DA PROGRAMAÇÃO</h2>
+                <p class="section-description">Acompanhe as atividades e horários da edição 2026</p>
+                <div id="cards-container" class="grid-cards">
+                    <!-- Mensagem temporária enquanto o JavaScript não carrega os dados -->
+                    <p class="loading-text">Carregando programação...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--  Localização -->
+    <section id="localizacao" class="section localizacao-section">
+        <div class="container">
+            <h2>LOCALIZAÇÃO</h2>
+            <p class="endereco">Rodovia Machado - Paraguaçu, km 3 - Bairro Santo Antônio, Machado - MG[cite: 1, 2]</p>
+
+            <!--Google Maps -->
+            <div class="map-responsive">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.234!2d-45.9221!3d-21.6812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b5ca3c15555555%3A0x123456789!2sIFSULDEMINAS%20-%20Campus%20Machado!5e0!3m2!1pt-BR!2sbr!4v1600000000000"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    title="Mapa de Localização do IFSULDEMINAS Campus Machado">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Redes Sociais -->
+    <section id="contato" class="section contato-section">
+        <div class="container">
+            <h2>CONTATO E REDES SOCIAIS</h2>
+            <div class="contato-grid">
+                <div class="contato-card">
+                    <h3>E-mail</h3>
+                    <p>semanameioambiente@ifsuldeminas.edu.br</p>
+                </div>
+                <div class="contato-card">
+                    <h3>Instagram</h3>
+                    <p>@SemanaMeioAmbiente</p>
+                </div>
+                <div class="contato-card">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="https://www.gov.br/mma" target="_blank" rel="noopener">Ministério do Meio
+                                Ambiente</a></li>
+                        <li><a href="https://www.greenpeace.org/brasil/" target="_blank" rel="noopener">Greenpeace
+                                Brasil</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Rodapé da Página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 - IFSULDEMINAS Campus Machado | Desenvolvido por Bianca, Lethicya e Ruan[cite: 1, 5]</p>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript (Acessibilidade e Lógica Dinâmica) -->
+    <script src="assets/js/acessibilidade.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
