@@ -27,7 +27,7 @@
   --font-heading: "Outfit", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
 
-  --font-size-base: 16px;
+  --font-size-base: 1rem;
   --border-radius: 18px;
 
   --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.4);
@@ -190,6 +190,11 @@ body.high-contrast .accessibility-bar button {
 body.high-contrast .accessibility-bar button:hover {
   color: #000000;
   background: #ffff00;
+}
+
+.accessibility-bar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 /* ==========================================
