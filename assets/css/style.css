@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
-/* ==========================================
-   1. IDENTIDADE VISUAL
-   Floresta à noite + amarelo de alerta
-========================================== */
+/* 1. IDENTIDADE VISUAL Floresta à noite + amarelo de alerta */
 
 :root {
   --bg-main: #06100b;
@@ -41,9 +38,7 @@
   --my: 40%;
 }
 
-/* ==========================================
-   2. ACESSIBILIDADE - ALTO CONTRASTE
-========================================== */
+/*2. ACESSIBILIDADE - ALTO CONTRASTE*/
 
 body.high-contrast {
   --bg-main: #000000;
@@ -69,9 +64,7 @@ body.high-contrast {
   --shadow-lg: none;
 }
 
-/* ==========================================
-   3. RESET E CONFIGURAÇÕES GERAIS
-========================================== */
+/*3. RESET E CONFIGURAÇÕES GERAIS*/
 
 * {
   margin: 0;
@@ -142,9 +135,7 @@ img {
   color: var(--text-on-accent);
 }
 
-/* ==========================================
-   4. BARRA DE ACESSIBILIDADE
-========================================== */
+/* 4. BARRA DE ACESSIBILIDADE*/
 
 .accessibility-bar {
   background: var(--primary-dark);
@@ -197,9 +188,6 @@ body.high-contrast .accessibility-bar button:hover {
   cursor: not-allowed;
 }
 
-/* ==========================================
-   5. HEADER E NAVEGAÇÃO
-========================================== */
 
 .header {
   position: sticky;
@@ -271,10 +259,6 @@ body.high-contrast .nav-links a:hover {
   color: #000000;
 }
 
-/* ==========================================
-   6. HERO - O MOMENTO MEMORÁVEL
-   Vídeo de fundo + texto gigante + luz do cursor
-========================================== */
 
 .hero {
   position: relative;
@@ -402,9 +386,7 @@ body.high-contrast .nav-links a:hover {
   gap: 14px;
 }
 
-/* ==========================================
-   7. BOTÕES
-========================================== */
+/*7. BOTÕES */
 
 .btn {
   display: inline-flex;
@@ -456,9 +438,7 @@ body.high-contrast .nav-links a:hover {
   border-color: #ffffff;
 }
 
-/* ==========================================
-   8. SEÇÕES
-========================================== */
+/* 8. SEÇÕES */
 
 .section {
   padding: 80px 0;
@@ -504,10 +484,7 @@ body.high-contrast .nav-links a:hover {
   margin-bottom: 8px;
 }
 
-/* ==========================================
-   9. SEÇÃO SOBRE
-   O card fica no .container, não na section
-========================================== */
+/* 9. SEÇÃO SOBRE O card fica no .container, não na section */
 
 .sobre-section .container {
   background: var(--card-bg);
@@ -535,9 +512,7 @@ body.high-contrast .nav-links a:hover {
   margin-bottom: 0;
 }
 
-/* ==========================================
-   10. PROGRAMAÇÃO - CARDS
-========================================== */
+/* 10. PROGRAMAÇÃO - CARDS */
 
 .grid-cards {
   display: grid;
@@ -627,9 +602,7 @@ body.high-contrast .nav-links a:hover {
   font-style: italic;
 }
 
-/* ==========================================
-   11. MAPA
-========================================== */
+/* 11. MAPA */
 
 .map-responsive {
   width: 100%;
@@ -655,9 +628,7 @@ body.high-contrast .map-responsive iframe {
   filter: none;
 }
 
-/* ==========================================
-   12. CONTATO
-========================================== */
+/* 12. CONTATO */
 
 .contato-grid {
   display: grid;
@@ -726,9 +697,7 @@ body.high-contrast .contato-card a {
   color: #ffff00;
 }
 
-/* ==========================================
-   13. RODAPÉ
-========================================== */
+/* 13. RODAPÉ */
 
 .footer {
   background: var(--primary-dark);
@@ -758,9 +727,7 @@ body.high-contrast .footer {
   border-top: 2px solid #ffff00;
 }
 
-/* ==========================================
-   14. AJUSTES DO ALTO CONTRASTE
-========================================== */
+/* 14. AJUSTES DO ALTO CONTRASTE */
 
 body.high-contrast .hero {
   background: #000000;
@@ -807,9 +774,7 @@ body.high-contrast .btn-secondary:hover {
   color: #000000;
 }
 
-/* ==========================================
-   15. RESPONSIVIDADE - TABLETS
-========================================== */
+/* 15. RESPONSIVIDADE - TABLETS */
 
 @media (max-width: 900px) {
   .nav-container {
@@ -831,9 +796,7 @@ body.high-contrast .btn-secondary:hover {
   }
 }
 
-/* ==========================================
-   16. RESPONSIVIDADE - CELULARES
-========================================== */
+/* 16. RESPONSIVIDADE - CELULARES */
 
 @media (max-width: 600px) {
   .container {
@@ -920,9 +883,7 @@ body.high-contrast .btn-secondary:hover {
   }
 }
 
-/* ==========================================
-   17. ACESSIBILIDADE - MOVIMENTO REDUZIDO
-========================================== */
+/* 17. ACESSIBILIDADE - MOVIMENTO REDUZIDO */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -938,4 +899,57 @@ body.high-contrast .btn-secondary:hover {
   .hero-video {
     display: none;
   }
+}
+
+/* Botão de pausar o vídeo do hero */
+.hero-pause {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+
+  background: rgba(6, 16, 11, 0.6);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  padding: 8px 16px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+
+  transition: background var(--transition), color var(--transition);
+}
+
+.hero-pause:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+body.high-contrast .hero-pause {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pause {
+    display: none;
+  }
+}
+
+/* Item do menu da seção atual */
+.nav-links a[aria-current="location"] {
+  background: var(--surface-soft);
+  color: var(--accent);
+}
+
+body.high-contrast .nav-links a[aria-current="location"] {
+  background: #ffff00;
+  color: #000000;
+}
+
+/* Botão "Tentar de novo" dentro da grade de cards */
+.grid-cards > .btn {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
