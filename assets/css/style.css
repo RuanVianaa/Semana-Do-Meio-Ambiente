@@ -962,3 +962,282 @@ body.high-contrast .nav-links a[aria-current="location"] {
   margin-bottom: 18px;
   border: 2px solid var(--accent);
 }
+
+/*18. FAIXA DE PATROCINADORES*/
+
+.patrocinadores-faixa {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--primary-dark);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.faixa-link {
+  display: block;
+  padding: 14px 0;
+
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.faixa-track {
+  display: flex;
+  width: max-content;
+  animation: faixa-rolar 35s linear infinite;
+}
+
+.faixa-lista {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+
+  /* cada lista ocupa pelo menos a tela inteira, mesmo com poucos nomes */
+  min-width: 100vw;
+  list-style: none;
+}
+
+.faixa-lista li {
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+  white-space: nowrap;
+
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.faixa-lista li::after {
+  content: "✶";
+  margin-left: 48px;
+  color: var(--accent);
+}
+
+/* Se usar logos no lugar dos nomes: <li><img src="..." alt="Nome"></li> */
+.faixa-lista img {
+  height: 34px;
+  width: auto;
+
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+@keyframes faixa-rolar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa com mouse, teclado ou o botão de pausar */
+.faixa-link:hover .faixa-track,
+.faixa-link:focus-visible .faixa-track,
+.faixa-track.pausada {
+  animation-play-state: paused;
+}
+
+.faixa-pause {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  z-index: 2;
+  transform: translateY(-50%);
+
+  background: var(--primary-dark);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  transition: background var(--transition), color var(--transition);
+}
+
+.faixa-pause:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+body.high-contrast .patrocinadores-faixa {
+  border-bottom: 2px solid #ffff00;
+}
+
+/* Quem pediu menos movimento vê a lista parada, em linhas */
+@media (prefers-reduced-motion: reduce) {
+  .faixa-track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+  }
+
+  .faixa-lista {
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+  }
+
+  .faixa-lista[aria-hidden="true"] {
+    display: none;
+  }
+
+  .faixa-pause {
+    display: none;
+  }
+}
+
+/* 19. GALERIA DE FOTOS*/
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+}
+
+.galeria-item {
+  display: block;
+  overflow: hidden;
+  cursor: zoom-in;
+
+  padding: 0;
+  aspect-ratio: 4 / 3;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galeria-item:hover,
+.galeria-item:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Foto ampliada */
+.galeria-modal {
+  max-width: min(92vw, 1100px);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+}
+
+.galeria-modal::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.galeria-modal img {
+  max-width: 100%;
+  max-height: 88vh;
+  margin-inline: auto;
+  border-radius: 16px;
+}
+
+.galeria-fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+
+  width: 44px;
+  height: 44px;
+
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 50%;
+
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.galeria-fechar:hover {
+  background: var(--accent-hover);
+}
+
+/*20. PÁGINA DE PATROCINADORES*/
+
+.pagina-titulo {
+  padding: 80px 0 20px;
+}
+
+.pagina-titulo .badge {
+  margin-bottom: 18px;
+}
+
+.pagina-titulo h1 {
+  margin-bottom: 20px;
+
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.patrocinador-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 110px;
+  padding: 14px;
+  margin-bottom: 20px;
+
+  background: #ffffff;
+  border-radius: 14px;
+}
+
+.patrocinador-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card .link-patrocinador {
+  margin-top: auto;
+  padding-top: 16px;
+
+  color: var(--accent);
+  font-weight: 700;
+  text-underline-offset: 4px;
+}
+
+.card:hover .link-patrocinador {
+  color: var(--text-on-accent);
+}
+
+/* Página atual no menu */
+.nav-links a[aria-current="page"] {
+  background: var(--surface-soft);
+  color: var(--accent);
+}
+
+body.high-contrast .nav-links a[aria-current="page"] {
+  background: #ffff00;
+  color: #000000;
+}

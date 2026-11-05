@@ -31,11 +31,34 @@
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#programacao">Programação</a></li>
                     <li><a href="#palestrantes">Palestrantes</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="patrocinadores.html">Patrocinadores</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- Faixa de patrocinadores -->
+    <section class="patrocinadores-faixa" aria-label="Patrocinadores do evento">
+        <a href="patrocinadores.html" class="faixa-link" aria-label="Ver a página de patrocinadores">
+            <div class="faixa-track">
+                <ul class="faixa-lista">
+                    <li>Patrocinador 1</li>
+                    <li>Patrocinador 2</li>
+                    <li>Patrocinador 3</li>
+                    <li>Patrocinador 4</li>
+                </ul>
+                <!-- cópia idêntica, necessária para o loop sem emenda -->
+                <ul class="faixa-lista" aria-hidden="true">
+                    <li>Patrocinador 1</li>
+                    <li>Patrocinador 2</li>
+                    <li>Patrocinador 3</li>
+                    <li>Patrocinador 4</li>
+                </ul>
+            </div>
+        </a>
+    </section>
 
     <main>
         <section id="inicio" class="hero">
@@ -82,102 +105,132 @@
             </div>
         </section>
 
-    <!-- Palestrantes Em Cards Futuros -->
-    <section id="palestrantes" class="section palestrantes-section">
-        <div class="container">
-            <h2>PALESTRANTES</h2>
-            <p class="section-description">Conheça quem vai participar da edição 2026</p>
+        <!-- Palestrantes Em Cards Futuros -->
+        <section id="palestrantes" class="section palestrantes-section">
+            <div class="container">
+                <h2>PALESTRANTES</h2>
+                <p class="section-description">Conheça quem vai participar da edição 2026</p>
 
-            <div class="grid-cards">
-                <article class="card">
-                    <img class="palestrante-foto" src="assets/img/ruan-viana.png" alt="Foto de Ruan Viana">
-                    <span class="data-badge">Palestra de abertura</span>
-                    <h3>Ruan Viana</h3>
-                    <p>Estudante do 4º período de Sistemas de Informação - Tratará sobre o descarte ideal de resíduos eletrônicos.</p>
-                </article>
+                <div class="grid-cards">
+                    <article class="card">
+                        <img class="palestrante-foto" src="assets/img/ruan-viana.png" alt="Foto de Ruan Viana">
+                        <span class="data-badge">Palestra de abertura</span>
+                        <h3>Ruan Viana</h3>
+                        <p>Estudante do 4º período de Sistemas de Informação - Tratará sobre o descarte ideal de
+                            resíduos eletrônicos.</p>
+                    </article>
 
-                <article class="card">
-                    <img class="palestrante-foto" src="assets/img/bianca-serafim.png" alt="Foto de Bianca Serafim">
-                    <span class="data-badge">Artesanato com Reciclagem</span>
-                    <h3>Bianca Serafim</h3>
-                    <p>Estudante do 4º período de Artes Visuais - Tratará sobre a criação de objetos a partir de materiais recicláveis.</p>
-                </article>
+                    <article class="card">
+                        <img class="palestrante-foto" src="assets/img/bianca-serafim.png" alt="Foto de Bianca Serafim">
+                        <span class="data-badge">Artesanato com Reciclagem</span>
+                        <h3>Bianca Serafim</h3>
+                        <p>Estudante do 4º período de Artes Visuais - Tratará sobre a criação de objetos a partir de
+                            materiais recicláveis.</p>
+                    </article>
 
-                <article class="card">
-                    <img class="palestrante-foto" src="assets/img/lethicya-caproni.png" alt="Foto de Lethicya Caproni">
-                    <span class="data-badge">Palestra sobre os Povos Originários</span>
-                    <h3>Lethicya Caproni</h3>
-                    <p>Estudante do 4º período de Sistemas de Informação - Tratará sobre a cultura e os direitos dos Povos Originários.</p>
-                </article>
+                    <article class="card">
+                        <img class="palestrante-foto" src="assets/img/lethicya-caproni.png"
+                            alt="Foto de Lethicya Caproni">
+                        <span class="data-badge">Palestra sobre os Povos Originários</span>
+                        <h3>Lethicya Caproni</h3>
+                        <p>Estudante do 4º período de Sistemas de Informação - Tratará sobre a cultura e os direitos dos
+                            Povos Originários.</p>
+                    </article>
 
 
-            </div>
-        </div>
-    </section>
-
-    <!--  Localização -->
-    <section id="localizacao" class="section localizacao-section">
-        <div class="container">
-            <h2>LOCALIZAÇÃO</h2>
-            <p class="endereco">Rodovia Machado - Paraguaçu, km 3 - Bairro Santo Antônio, Machado - MG</p>
-
-            <!--Google Maps -->
-            <div class="map-responsive">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3707.1344876567537!2d-45.888538399999995!3d-21.6975013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ca6b310a64f323%3A0x9ecc3a078d5481f5!2sIFSULDEMINAS%20-%20Campus%20Machado!5e0!3m2!1spt-BR!2sbr!4v1793663571211!5m2!1spt-BR!2sbr"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato e Redes Sociais -->
-    <section id="contato" class="section contato-section">
-        <div class="container">
-            <h2>CONTATO E REDES SOCIAIS</h2>
-            <div class="contato-grid">
-                <div class="contato-card">
-                    <h3>E-mail</h3>
-                    <p>semanameioambiente@ifsuldeminas.edu.br</p>
-                </div>
-                <div class="contato-card">
-                    <h3>Instagram</h3>
-                    <p>@SemanaMeioAmbiente</p>
-                </div>
-                <div class="contato-card">
-                    <h3>Links Úteis</h3>
-                    <ul>
-                        <li><a href="https://www.gov.br/mma" target="_blank" rel="noopener">Ministério do Meio
-                                Ambiente</a></li>
-                        <li><a href="https://www.greenpeace.org/brasil/" target="_blank" rel="noopener">Greenpeace
-                                Brasil</a></li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Rodapé da Página -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 - IFSULDEMINAS Campus Machado | Desenvolvido por Bianca, Lethicya e Ruan</p>
-        </div>
-    </footer>
+        <!-- Galeria -->
+        <section id="galeria" class="section galeria-section">
+            <div class="container">
+                <h2>GALERIA</h2>
+                <p class="section-description">Relembre os melhores momentos da edição anterior</p>
 
-    <!-- VLibras -->
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+                <div class="galeria-grid">
+                    <button type="button" class="galeria-item">
+                        <img src="assets/img/galeria/foto-01.jpg" alt="Descreva a foto 1" loading="lazy">
+                    </button>
+                    <button type="button" class="galeria-item">
+                        <img src="assets/img/galeria/foto-02.jpg" alt="Descreva a foto 2" loading="lazy">
+                    </button>
+                    <button type="button" class="galeria-item">
+                        <img src="assets/img/galeria/foto-03.jpg" alt="Descreva a foto 3" loading="lazy">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Foto ampliada -->
+        <dialog id="galeria-modal" class="galeria-modal" aria-label="Foto ampliada">
+            <button type="button" class="galeria-fechar" aria-label="Fechar foto">×</button>
+            <img src="" alt="">
+        </dialog>
+
+        <!--  Localização -->
+        <section id="localizacao" class="section localizacao-section">
+            <div class="container">
+                <h2>LOCALIZAÇÃO</h2>
+                <p class="endereco">Rodovia Machado - Paraguaçu, km 3 - Bairro Santo Antônio, Machado - MG</p>
+
+                <!--Google Maps -->
+                <div class="map-responsive">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3707.1344876567537!2d-45.888538399999995!3d-21.6975013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ca6b310a64f323%3A0x9ecc3a078d5481f5!2sIFSULDEMINAS%20-%20Campus%20Machado!5e0!3m2!1spt-BR!2sbr!4v1793663571211!5m2!1spt-BR!2sbr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato e Redes Sociais -->
+        <section id="contato" class="section contato-section">
+            <div class="container">
+                <h2>CONTATO E REDES SOCIAIS</h2>
+                <div class="contato-grid">
+                    <div class="contato-card">
+                        <h3>E-mail</h3>
+                        <p>semanameioambiente@ifsuldeminas.edu.br</p>
+                    </div>
+                    <div class="contato-card">
+                        <h3>Instagram</h3>
+                        <p>@SemanaMeioAmbiente</p>
+                    </div>
+                    <div class="contato-card">
+                        <h3>Links Úteis</h3>
+                        <ul>
+                            <li><a href="https://www.gov.br/mma" target="_blank" rel="noopener">Ministério do Meio
+                                    Ambiente</a></li>
+                            <li><a href="https://www.greenpeace.org/brasil/" target="_blank" rel="noopener">Greenpeace
+                                    Brasil</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rodapé da Página -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 - IFSULDEMINAS Campus Machado | Desenvolvido por Bianca, Lethicya e Ruan</p>
+            </div>
+        </footer>
+
+        <!-- VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
         </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-    <!-- Scripts JavaScript (Acessibilidade e Lógica Dinâmica) -->
-    <script src="assets/js/acessibilidade.js"></script>
-    <script type="module" src="assets/js/main.js"></script>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+        <!-- Scripts JavaScript (Acessibilidade e Lógica Dinâmica) -->
+        <script src="assets/js/acessibilidade.js"></script>
+        <script type="module" src="assets/js/main.js"></script>
 </body>
 
 </html>
