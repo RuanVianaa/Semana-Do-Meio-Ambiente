@@ -954,11 +954,11 @@ body.high-contrast .nav-links a[aria-current="location"] {
   justify-self: center;
 }
 
-/* .palestrante-foto {
+.palestrante-foto {
   width: 88px;
   height: 88px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 18px;
   border: 2px solid var(--accent);
-} */
+}
