@@ -1,25 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
-/* 1. IDENTIDADE VISUAL Floresta à noite + amarelo de alerta */
+/* ==========================================
+   1. IDENTIDADE VISUAL
+   Tema claro: fundo lima vivo + verde-floresta + amarelo
+========================================== */
 
 :root {
-  --bg-main: #06100b;
-  --primary: #0e231a;
-  --primary-light: #8fd19e;
-  --primary-dark: #030906;
+  --bg-main: #e9f6cf;
+  --primary: #14532d;
+  --primary-light: #1f6b3b;
+  --primary-dark: #d3ebb0;
 
-  --accent: #ffe14d;
-  --accent-hover: #fff08a;
+  --accent: #ffd43b;
+  --accent-hover: #ffe066;
 
-  --text-dark: #f2f5ee;
-  --text-muted: #a3b1a8;
+  --text-dark: #0f2a1d;
+  --text-muted: #3f5a4a;
 
-  --card-bg: #0d1a13;
-  --surface-soft: #15281e;
-  --border-color: #213a2c;
+  --card-bg: #ffffff;
+  --surface-soft: #d3ebb0;
+  --border-color: #b9d794;
 
-  --text-on-primary: #f2f5ee;
-  --text-on-accent: #06100b;
+  --text-on-primary: #ffffff;
+  --text-on-accent: #0b2e1a;
+
+  /* etiqueta de data dos cards */
+  --badge-bg: #14532d;
+  --badge-fg: #ffe14d;
 
   --font-heading: "Outfit", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
@@ -27,9 +34,9 @@
   --font-size-base: 1rem;
   --border-radius: 18px;
 
-  --shadow-sm: 0 2px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.55);
-  --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 2px 10px rgba(20, 83, 45, 0.08);
+  --shadow-md: 0 14px 34px rgba(20, 83, 45, 0.15);
+  --shadow-lg: 0 28px 60px rgba(11, 46, 26, 0.3);
 
   --transition: 0.25s ease;
 
@@ -38,7 +45,9 @@
   --my: 40%;
 }
 
-/*2. ACESSIBILIDADE - ALTO CONTRASTE*/
+/* ==========================================
+   2. ACESSIBILIDADE - ALTO CONTRASTE
+========================================== */
 
 body.high-contrast {
   --bg-main: #000000;
@@ -59,12 +68,17 @@ body.high-contrast {
   --text-on-primary: #000000;
   --text-on-accent: #000000;
 
+  --badge-bg: #111111;
+  --badge-fg: #ffff00;
+
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: none;
 }
 
-/*3. RESET E CONFIGURAÇÕES GERAIS*/
+/* ==========================================
+   3. RESET E CONFIGURAÇÕES GERAIS
+========================================== */
 
 * {
   margin: 0;
@@ -87,6 +101,36 @@ body {
   transition:
     background-color var(--transition),
     color var(--transition);
+}
+
+/* Manchas de cor fixas no fundo: dão vida à página */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 70% 50% at 0% 0%,
+      rgba(255, 212, 59, 0.5),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 100% 25%,
+      rgba(72, 187, 120, 0.32),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 25% 100%,
+      rgba(190, 230, 90, 0.5),
+      transparent 65%
+    );
+}
+
+body.high-contrast::before {
+  display: none;
 }
 
 h1,
@@ -125,9 +169,21 @@ img {
   margin-inline: auto;
 }
 
+/* Foco: verde-escuro nas áreas claras, amarelo nas áreas escuras */
 :focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--primary-dark);
   outline-offset: 4px;
+}
+
+.accessibility-bar :focus-visible,
+.hero :focus-visible,
+.footer :focus-visible,
+.patrocinadores-faixa :focus-visible {
+  outline-color: var(--accent);
+}
+
+body.high-contrast :focus-visible {
+  outline-color: #ffff00;
 }
 
 ::selection {
@@ -135,11 +191,10 @@ img {
   color: var(--text-on-accent);
 }
 
-/* 4. BARRA DE ACESSIBILIDADE*/
+/*4. BARRA DE ACESSIBILIDADE*/
 
 .accessibility-bar {
   background: var(--primary-dark);
-  border-bottom: 1px solid var(--border-color);
   padding: 8px 0;
 }
 
@@ -153,8 +208,8 @@ img {
 
 .accessibility-bar button {
   background: transparent;
-  color: var(--text-dark);
-  border: 1px solid var(--border-color);
+  color: #14532d;
+  border: 1px solid rgba(0, 0, 0, 0.35);
   padding: 6px 14px;
   border-radius: 100px;
   font-size: 0.78rem;
@@ -166,6 +221,11 @@ img {
   background: var(--accent);
   color: var(--text-on-accent);
   border-color: var(--accent);
+}
+
+.accessibility-bar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 body.high-contrast .accessibility-bar {
@@ -183,11 +243,9 @@ body.high-contrast .accessibility-bar button:hover {
   background: #ffff00;
 }
 
-.accessibility-bar button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
+/* ==========================================
+   5. HEADER E NAVEGAÇÃO
+========================================== */
 
 .header {
   position: sticky;
@@ -201,7 +259,7 @@ body.high-contrast .accessibility-bar button:hover {
 
 @supports (backdrop-filter: blur(12px)) {
   body:not(.high-contrast) .header {
-    background: rgba(6, 16, 11, 0.82);
+    background: rgba(233, 246, 207, 0.85);
     backdrop-filter: blur(14px);
   }
 }
@@ -220,9 +278,7 @@ body.high-contrast .accessibility-bar button:hover {
   object-fit: contain;
   flex-shrink: 0;
 
-  background: #ffffff;
-  padding: 6px 10px;
-  border-radius: 10px;
+  
 }
 
 .nav-links {
@@ -259,6 +315,10 @@ body.high-contrast .nav-links a:hover {
   color: #000000;
 }
 
+/* ==========================================
+   6. HERO
+   Bloco escuro com vídeo: contraste forte com o fundo claro
+========================================== */
 
 .hero {
   position: relative;
@@ -280,7 +340,7 @@ body.high-contrast .nav-links a:hover {
   color: #ffffff;
 
   border-radius: 28px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--primary-dark);
 
   background:
     linear-gradient(
@@ -301,7 +361,7 @@ body.high-contrast .nav-links a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: 1.00;
   pointer-events: none;
 }
 
@@ -375,7 +435,7 @@ body.high-contrast .nav-links a:hover {
   max-width: 560px;
   font-size: 1rem;
   font-weight: 400;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-bottom: 36px;
 }
 
@@ -386,7 +446,41 @@ body.high-contrast .nav-links a:hover {
   gap: 14px;
 }
 
-/*7. BOTÕES */
+/* Botão de pausar o vídeo do hero */
+.hero-pause {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+
+  background: rgba(6, 16, 11, 0.6);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  padding: 8px 16px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.hero-pause:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+body.high-contrast .hero-pause {
+  display: none;
+}
+
+/* ==========================================
+   7. BOTÕES
+========================================== */
 
 .btn {
   display: inline-flex;
@@ -419,6 +513,7 @@ body.high-contrast .nav-links a:hover {
 .btn-primary {
   background: var(--accent);
   color: var(--text-on-accent);
+  border-color: var(--primary-dark);
 }
 
 .btn-primary:hover {
@@ -426,19 +521,34 @@ body.high-contrast .nav-links a:hover {
   color: var(--text-on-accent);
 }
 
+/* Em páginas claras: contorno verde */
 .btn-secondary {
   background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn-secondary:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* Dentro do hero (fundo escuro): contorno branco */
+.hero .btn-secondary {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.hero .btn-secondary:hover {
   background: #ffffff;
   color: #06100b;
   border-color: #ffffff;
 }
 
-/* 8. SEÇÕES */
+/* ==========================================
+   8. SEÇÕES
+========================================== */
 
 .section {
   padding: 80px 0;
@@ -484,7 +594,10 @@ body.high-contrast .nav-links a:hover {
   margin-bottom: 8px;
 }
 
-/* 9. SEÇÃO SOBRE O card fica no .container, não na section */
+/* ==========================================
+   9. SEÇÃO SOBRE
+   O card fica no .container, não na section
+========================================== */
 
 .sobre-section .container {
   background: var(--card-bg);
@@ -512,12 +625,20 @@ body.high-contrast .nav-links a:hover {
   margin-bottom: 0;
 }
 
-/* 10. PROGRAMAÇÃO - CARDS */
+/* ==========================================
+   10. PROGRAMAÇÃO - CARDS
+========================================== */
 
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
   gap: 20px;
+}
+
+/* Botão "Tentar de novo" dentro da grade de cards */
+.grid-cards > .btn {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
 
 .card {
@@ -539,22 +660,24 @@ body.high-contrast .nav-links a:hover {
 
   transition:
     transform var(--transition),
+    box-shadow var(--transition),
     background var(--transition),
     border-color var(--transition);
 }
 
 .card:hover {
   transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
   background: var(--accent);
-  border-color: var(--accent);
+  border-color: var(--primary-dark);
 }
 
 .card .data-badge {
   display: inline-flex;
   align-items: center;
 
-  background: var(--surface-soft);
-  color: var(--accent);
+  background: var(--badge-bg);
+  color: var(--badge-fg);
 
   padding: 7px 14px;
   margin-bottom: 22px;
@@ -602,7 +725,18 @@ body.high-contrast .nav-links a:hover {
   font-style: italic;
 }
 
-/* 11. MAPA */
+.palestrante-foto {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  border: 3px solid var(--accent);
+}
+
+/* ==========================================
+   11. MAPA
+========================================== */
 
 .map-responsive {
   width: 100%;
@@ -620,15 +754,11 @@ body.high-contrast .nav-links a:hover {
   width: 100%;
   min-height: 400px;
   border: 0;
-  /* escurece o mapa para combinar com o tema */
-  filter: invert(0.92) hue-rotate(180deg) saturate(0.7);
 }
 
-body.high-contrast .map-responsive iframe {
-  filter: none;
-}
-
-/* 12. CONTATO */
+/* ==========================================
+   12. CONTATO
+========================================== */
 
 .contato-grid {
   display: grid;
@@ -653,7 +783,7 @@ body.high-contrast .map-responsive iframe {
 
 .contato-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: var(--primary-light);
 }
 
 .contato-card h3 {
@@ -681,28 +811,28 @@ body.high-contrast .map-responsive iframe {
 }
 
 .contato-card a {
-  color: var(--accent);
+  color: var(--primary-light);
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
   overflow-wrap: anywhere;
 }
 
 .contato-card a:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: var(--text-dark);
 }
 
 body.high-contrast .contato-card a {
   color: #ffff00;
 }
 
-/* 13. RODAPÉ */
+/* ==========================================
+   13. RODAPÉ
+========================================== */
 
 .footer {
   background: var(--primary-dark);
-  border-top: 1px solid var(--border-color);
-  color: #ffffff;
+  color: #06100b;
 
   padding: 50px 20px;
   margin-top: 70px;
@@ -710,10 +840,11 @@ body.high-contrast .contato-card a {
   text-align: center;
   font-size: 0.9rem;
   line-height: 1.8;
+  font-weight: bold;
 }
 
 .footer p {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .footer a {
@@ -724,10 +855,321 @@ body.high-contrast .contato-card a {
 body.high-contrast .footer {
   background: #000000;
   color: #ffffff;
-  border-top: 2px solid #ffff00;
+  border-top: 2px solid #ffffff;
 }
 
-/* 14. AJUSTES DO ALTO CONTRASTE */
+.desenvolvedor-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  list-style: none;
+}
+
+.desenvolvedor-links a::after {
+  content: " ↗";
+}
+
+.desenvolvedor-links a {
+  color: #14532d;
+}
+
+/* ==========================================
+   14. FAIXA DE PATROCINADORES (abaixo do menu)
+   Duas listas iguais + translateX(-50%) = loop sem emenda
+========================================== */
+
+.patrocinadores-faixa {
+  position: relative;
+  overflow: hidden;
+
+  background: var(--primary-dark);
+}
+
+.faixa-link {
+  display: block;
+  padding: 14px 0;
+
+  color: #14532d;
+  text-decoration: none;
+}
+
+.patrocinadores-faixa .faixa-link:focus-visible {
+  outline-offset: -4px;
+}
+
+.faixa-track {
+  display: flex;
+  width: max-content;
+  animation: faixa-rolar 35s linear infinite;
+}
+
+.faixa-lista {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+
+  /* cada lista ocupa pelo menos a tela inteira, mesmo com poucos nomes */
+  min-width: 100vw;
+  list-style: none;
+}
+
+.faixa-lista li {
+  display: flex;
+  align-items: center;
+
+  padding: 0 24px;
+  white-space: nowrap;
+
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.faixa-lista li::after {
+  content: "✶";
+  margin-left: 48px;
+  color: var(--accent);
+}
+
+/* Se usar logos no lugar dos nomes: <li><img src="..." alt="Nome"></li> */
+.faixa-lista img {
+  height: 34px;
+  width: auto;
+
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+@keyframes faixa-rolar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausa com mouse, teclado ou o botão de pausar */
+.faixa-link:hover .faixa-track,
+.faixa-link:focus-visible .faixa-track,
+.faixa-track.pausada {
+  animation-play-state: paused;
+}
+
+.faixa-pause {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  z-index: 2;
+  transform: translateY(-50%);
+
+  background: var(--primary-dark);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 100px;
+
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.faixa-pause:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+body.high-contrast .patrocinadores-faixa {
+  border-bottom: 2px solid #ffff00;
+}
+
+/* ==========================================
+   15. GALERIA DE FOTOS
+========================================== */
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+}
+
+.galeria-item {
+  display: block;
+  overflow: hidden;
+  cursor: zoom-in;
+
+  padding: 0;
+  aspect-ratio: 4 / 3;
+
+  background: var(--card-bg);
+  border: 2px solid var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.galeria-item:hover,
+.galeria-item:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+
+body.high-contrast .galeria-item {
+  border-color: #ffff00;
+}
+
+/* Foto ampliada */
+.galeria-modal {
+  max-width: min(92vw, 1100px);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+}
+
+.galeria-modal::backdrop {
+  background: rgba(6, 16, 11, 0.88);
+}
+
+.galeria-modal img {
+  max-width: 100%;
+  max-height: 88vh;
+  margin-inline: auto;
+  border-radius: 16px;
+}
+
+.galeria-fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+
+  width: 44px;
+  height: 44px;
+
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border: none;
+  border-radius: 50%;
+
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.galeria-fechar:hover {
+  background: var(--accent-hover);
+}
+
+/* ==========================================
+   16. PÁGINA DE PATROCINADORES
+========================================== */
+
+.pagina-titulo {
+  padding: 80px 0 20px;
+}
+
+.pagina-titulo .badge {
+  margin-bottom: 18px;
+}
+
+.pagina-titulo h1 {
+  margin-bottom: 20px;
+
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.patrocinador-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 110px;
+  padding: 14px;
+  margin-bottom: 20px;
+
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+}
+
+.patrocinador-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card .link-patrocinador {
+  margin-top: auto;
+  padding-top: 16px;
+
+  color: var(--primary-light);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.card:hover .link-patrocinador {
+  color: var(--text-on-accent);
+}
+
+body.high-contrast .card .link-patrocinador {
+  color: #ffff00;
+}
+
+body.high-contrast .card:hover .link-patrocinador {
+  color: #000000;
+}
+
+/* ==========================================
+   17. ITEM ATUAL DO MENU
+   "location" = seção em que a pessoa está rolando
+   "page" = página atual (patrocinadores.html)
+========================================== */
+
+.nav-links a[aria-current="location"],
+.nav-links a[aria-current="page"] {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+body.high-contrast .nav-links a[aria-current="location"],
+body.high-contrast .nav-links a[aria-current="page"] {
+  background: #ffff00;
+  color: #000000;
+}
+
+/* ==========================================
+   18. AJUSTES DO ALTO CONTRASTE
+========================================== */
 
 body.high-contrast .hero {
   background: #000000;
@@ -774,7 +1216,37 @@ body.high-contrast .btn-secondary:hover {
   color: #000000;
 }
 
-/* 15. RESPONSIVIDADE - TABLETS */
+body.high-contrast .logo {
+  background: #fdfdfd;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+body.high-contrast .patrocinadores-faixa {
+  background: #000000;
+  border-bottom: 2px solid #ffff00;
+}
+
+body.high-contrast .faixa-link,
+body.high-contrast .faixa-lista li,
+body.high-contrast .faixa-lista li::after {
+  color: #ffff00;
+}
+
+body.high-contrast .faixa-pause {
+  background: #000000;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+body.high-contrast .faixa-pause:hover {
+  background: #ffff00;
+  color: #000000;
+}
+
+/* ==========================================
+   19. RESPONSIVIDADE - TABLETS
+========================================== */
 
 @media (max-width: 900px) {
   .nav-container {
@@ -796,7 +1268,9 @@ body.high-contrast .btn-secondary:hover {
   }
 }
 
-/* 16. RESPONSIVIDADE - CELULARES */
+/* ==========================================
+   20. RESPONSIVIDADE - CELULARES
+========================================== */
 
 @media (max-width: 600px) {
   .container {
@@ -883,7 +1357,9 @@ body.high-contrast .btn-secondary:hover {
   }
 }
 
-/* 17. ACESSIBILIDADE - MOVIMENTO REDUZIDO */
+/* ==========================================
+   21. ACESSIBILIDADE - MOVIMENTO REDUZIDO
+========================================== */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -895,183 +1371,13 @@ body.high-contrast .btn-secondary:hover {
     transition-duration: 0.01ms !important;
   }
 
-  /* Sem vídeo para quem prefere menos movimento */
-  .hero-video {
-    display: none;
-  }
-}
-
-/* Botão de pausar o vídeo do hero */
-.hero-pause {
-  position: absolute;
-  right: 24px;
-  bottom: 24px;
-  z-index: 2;
-
-  background: rgba(6, 16, 11, 0.6);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 100px;
-  padding: 8px 16px;
-
-  font-size: 0.8rem;
-  font-weight: 700;
-  backdrop-filter: blur(6px);
-
-  transition: background var(--transition), color var(--transition);
-}
-
-.hero-pause:hover {
-  background: var(--accent);
-  color: var(--text-on-accent);
-  border-color: var(--accent);
-}
-
-body.high-contrast .hero-pause {
-  display: none;
-}
-
-@media (prefers-reduced-motion: reduce) {
+  /* Sem vídeo nem botão de pausar para quem prefere menos movimento */
+  .hero-video,
   .hero-pause {
     display: none;
   }
-}
 
-/* Item do menu da seção atual */
-.nav-links a[aria-current="location"] {
-  background: var(--surface-soft);
-  color: var(--accent);
-}
-
-body.high-contrast .nav-links a[aria-current="location"] {
-  background: #ffff00;
-  color: #000000;
-}
-
-/* Botão "Tentar de novo" dentro da grade de cards */
-.grid-cards > .btn {
-  grid-column: 1 / -1;
-  justify-self: center;
-}
-
-.palestrante-foto {
-  width: 88px;
-  height: 88px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 18px;
-  border: 2px solid var(--accent);
-}
-
-/*18. FAIXA DE PATROCINADORES*/
-
-.patrocinadores-faixa {
-  position: relative;
-  overflow: hidden;
-
-  background: var(--primary-dark);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.faixa-link {
-  display: block;
-  padding: 14px 0;
-
-  color: var(--text-dark);
-  text-decoration: none;
-}
-
-.faixa-track {
-  display: flex;
-  width: max-content;
-  animation: faixa-rolar 35s linear infinite;
-}
-
-.faixa-lista {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-around;
-
-  /* cada lista ocupa pelo menos a tela inteira, mesmo com poucos nomes */
-  min-width: 100vw;
-  list-style: none;
-}
-
-.faixa-lista li {
-  display: flex;
-  align-items: center;
-
-  padding: 0 24px;
-  white-space: nowrap;
-
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.faixa-lista li::after {
-  content: "✶";
-  margin-left: 48px;
-  color: var(--accent);
-}
-
-/* Se usar logos no lugar dos nomes: <li><img src="..." alt="Nome"></li> */
-.faixa-lista img {
-  height: 34px;
-  width: auto;
-
-  background: #ffffff;
-  padding: 4px 10px;
-  border-radius: 8px;
-}
-
-@keyframes faixa-rolar {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pausa com mouse, teclado ou o botão de pausar */
-.faixa-link:hover .faixa-track,
-.faixa-link:focus-visible .faixa-track,
-.faixa-track.pausada {
-  animation-play-state: paused;
-}
-
-.faixa-pause {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  z-index: 2;
-  transform: translateY(-50%);
-
-  background: var(--primary-dark);
-  color: var(--text-dark);
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
-
-  padding: 4px 12px;
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  transition: background var(--transition), color var(--transition);
-}
-
-.faixa-pause:hover {
-  background: var(--accent);
-  color: var(--text-on-accent);
-  border-color: var(--accent);
-}
-
-body.high-contrast .patrocinadores-faixa {
-  border-bottom: 2px solid #ffff00;
-}
-
-/* Quem pediu menos movimento vê a lista parada, em linhas */
-@media (prefers-reduced-motion: reduce) {
+  /* Faixa de patrocinadores parada, em linhas */
   .faixa-track {
     animation: none;
     width: auto;
@@ -1092,152 +1398,4 @@ body.high-contrast .patrocinadores-faixa {
   .faixa-pause {
     display: none;
   }
-}
-
-/* 19. GALERIA DE FOTOS*/
-
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
-  gap: 16px;
-}
-
-.galeria-item {
-  display: block;
-  overflow: hidden;
-  cursor: zoom-in;
-
-  padding: 0;
-  aspect-ratio: 4 / 3;
-
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
-
-  transition: transform var(--transition), border-color var(--transition);
-}
-
-.galeria-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.galeria-item:hover,
-.galeria-item:focus-visible {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-}
-
-.galeria-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Foto ampliada */
-.galeria-modal {
-  max-width: min(92vw, 1100px);
-  max-height: 90vh;
-  margin: auto;
-  padding: 0;
-
-  background: transparent;
-  border: none;
-}
-
-.galeria-modal::backdrop {
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.galeria-modal img {
-  max-width: 100%;
-  max-height: 88vh;
-  margin-inline: auto;
-  border-radius: 16px;
-}
-
-.galeria-fechar {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1;
-
-  width: 44px;
-  height: 44px;
-
-  background: var(--accent);
-  color: var(--text-on-accent);
-  border: none;
-  border-radius: 50%;
-
-  font-size: 1.6rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.galeria-fechar:hover {
-  background: var(--accent-hover);
-}
-
-/*20. PÁGINA DE PATROCINADORES*/
-
-.pagina-titulo {
-  padding: 80px 0 20px;
-}
-
-.pagina-titulo .badge {
-  margin-bottom: 18px;
-}
-
-.pagina-titulo h1 {
-  margin-bottom: 20px;
-
-  font-size: clamp(2.6rem, 8vw, 6rem);
-  font-weight: 900;
-  line-height: 0.95;
-  letter-spacing: -0.06em;
-}
-
-.patrocinador-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 110px;
-  padding: 14px;
-  margin-bottom: 20px;
-
-  background: #ffffff;
-  border-radius: 14px;
-}
-
-.patrocinador-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.card .link-patrocinador {
-  margin-top: auto;
-  padding-top: 16px;
-
-  color: var(--accent);
-  font-weight: 700;
-  text-underline-offset: 4px;
-}
-
-.card:hover .link-patrocinador {
-  color: var(--text-on-accent);
-}
-
-/* Página atual no menu */
-.nav-links a[aria-current="page"] {
-  background: var(--surface-soft);
-  color: var(--accent);
-}
-
-body.high-contrast .nav-links a[aria-current="page"] {
-  background: #ffff00;
-  color: #000000;
 }
