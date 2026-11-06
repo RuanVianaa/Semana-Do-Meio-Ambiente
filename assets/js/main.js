@@ -195,3 +195,65 @@ function configurarMenuAtivo() {
 }
 
 configurarMenuAtivo();
+// Faixa de patrocinadores: botão de pausar
+
+function configurarFaixa() {
+  const faixa = document.querySelector(".patrocinadores-faixa");
+  const trilha = faixa?.querySelector(".faixa-track");
+  if (!trilha) return;
+
+  // Com "menos movimento", o CSS já deixa a faixa parada
+  if (prefereMenosMovimento) return;
+
+  const botao = document.createElement("button");
+  botao.type = "button";
+  botao.className = "faixa-pause";
+  botao.textContent = "Pausar";
+  botao.setAttribute("aria-label", "Pausar faixa de patrocinadores");
+  botao.setAttribute("aria-pressed", "false");
+
+  botao.addEventListener("click", () => {
+    const pausada = trilha.classList.toggle("pausada");
+    botao.textContent = pausada ? "Continuar" : "Pausar";
+    botao.setAttribute(
+      "aria-label",
+      pausada
+        ? "Continuar faixa de patrocinadores"
+        : "Pausar faixa de patrocinadores",
+    );
+    botao.setAttribute("aria-pressed", String(pausada));
+  });
+
+  faixa.append(botao);
+}
+
+configurarFaixa();
+
+// Galeria: ampliar foto
+
+function configurarGaleria() {
+  const modal = document.getElementById("galeria-modal");
+  const itens = document.querySelectorAll(".galeria-item");
+  if (!modal || itens.length === 0) return;
+
+  const imagem = modal.querySelector("img");
+  const fechar = modal.querySelector(".galeria-fechar");
+
+  itens.forEach((item) => {
+    item.addEventListener("click", () => {
+      const miniatura = item.querySelector("img");
+      imagem.src = miniatura.currentSrc || miniatura.src;
+      imagem.alt = miniatura.alt;
+      modal.showModal();
+    });
+  });
+
+  fechar.addEventListener("click", () => modal.close());
+
+  // Clicar fora da foto também fecha (Esc fecha sozinho)
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.close();
+  });
+}
+
+configurarGaleria();

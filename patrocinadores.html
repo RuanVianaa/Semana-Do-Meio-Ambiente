@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrocinadores - Semana do Meio Ambiente 2026 - IFSULDEMINAS Campus Machado</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!--Barra de acessibilidade-->
+    <div class="accessibility-bar" aria-label="Controles de acessibilidade">
+        <div class="container">
+            <button id="btn-contrast" aria-label="Alternar Alto Contraste">Alto Contraste</button>
+            <button id="btn-aum-fonte" aria-label="Aumentar Fonte">A+</button>
+            <button id="btn-dim-fonte" aria-label="Diminuir Fonte">A-</button>
+        </div>
+    </div>
+
+    <!--Cabeçalho (mantenha o menu igual ao do index.html)-->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" aria-label="Voltar para a página inicial">
+                <img src="assets/img/logo-if.png" alt="Logotipo Oficial do IFSULDEMINAS Campus Machado" class="logo">
+            </a>
+
+            <nav aria-label="Navegação Principal">
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#programacao">Programação</a></li>
+                    <li><a href="index.html#palestrantes">Palestrantes</a></li>
+                    <li><a href="index.html#galeria">Galeria</a></li>
+                    <li><a href="patrocinadores.html" aria-current="page">Patrocinadores</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Título da página -->
+        <section class="section pagina-titulo">
+            <div class="container">
+                <span class="badge">Quem apoia</span>
+                <h1>PATROCINADORES</h1>
+                <p class="section-description">A Semana do Meio Ambiente 2026 conta com o apoio de quem acredita em
+                    sustentabilidade e inovação. Conheça quem faz esta edição acontecer.</p>
+                <a href="index.html" class="btn btn-secondary">← Voltar ao início</a>
+            </div>
+        </section>
+
+        <!-- Lista de patrocinadores -->
+        <section class="section" aria-labelledby="titulo-apoiadores">
+            <div class="container">
+                <h2 id="titulo-apoiadores">NOSSOS APOIADORES</h2>
+
+                <div class="grid-cards">
+                    <!-- Para adicionar outro patrocinador, copie um <article> inteiro.
+                         Sem logo? Apague só a <div class="patrocinador-logo">. -->
+                    <article class="card">
+                        <div class="patrocinador-logo">
+                            <img src="assets/img/patrocinadores/patrocinador-01.png"
+                                alt="Logotipo do Patrocinador 1" loading="lazy">
+                        </div>
+                        <h3>Nome do Patrocinador 1</h3>
+                        <p>Uma frase sobre quem é o patrocinador e como ele apoia o evento.</p>
+                        <a class="link-patrocinador" href="https://exemplo.com.br" target="_blank"
+                            rel="noopener">Visitar site</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="patrocinador-logo">
+                            <img src="assets/img/patrocinadores/patrocinador-02.png"
+                                alt="Logotipo do Patrocinador 2" loading="lazy">
+                        </div>
+                        <h3>Nome do Patrocinador 2</h3>
+                        <p>Uma frase sobre quem é o patrocinador e como ele apoia o evento.</p>
+                        <a class="link-patrocinador" href="https://exemplo.com.br" target="_blank"
+                            rel="noopener">Visitar site</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="patrocinador-logo">
+                            <img src="assets/img/patrocinadores/patrocinador-03.png"
+                                alt="Logotipo do Patrocinador 3" loading="lazy">
+                        </div>
+                        <h3>Nome do Patrocinador 3</h3>
+                        <p>Uma frase sobre quem é o patrocinador e como ele apoia o evento.</p>
+                        <a class="link-patrocinador" href="https://exemplo.com.br" target="_blank"
+                            rel="noopener">Visitar site</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Convite para novos patrocinadores -->
+        <section class="section sobre-section">
+            <div class="container">
+                <h2>SEJA UM PATROCINADOR</h2>
+                <div class="sobre-content">
+                    <p>Quer apoiar a Semana do Meio Ambiente? Fale com a organização e conheça as formas de
+                        participação.</p>
+                    <p>
+                        <a class="btn btn-primary"
+                            href="mailto:semanameioambiente@ifsuldeminas.edu.br?subject=Patroc%C3%ADnio%20Semana%20do%20Meio%20Ambiente%202026">Fale
+                            com a organização</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé da Página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 - IFSULDEMINAS Campus Machado | Desenvolvido por Bianca, Lethicya e Ruan</p>
+        </div>
+    </footer>
+
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="assets/js/acessibilidade.js"></script>
+</body>
+
+</html>
