@@ -194,38 +194,6 @@ function configurarMenuAtivo() {
   });
 }
 
-configurarMenuAtivo();
-// Faixa de patrocinadores: botão de pausar
-
-function configurarFaixa() {
-  const faixa = document.querySelector(".patrocinadores-faixa");
-  const trilha = faixa?.querySelector(".faixa-track");
-  if (!trilha) return;
-
-  // Com "menos movimento", o CSS já deixa a faixa parada
-  if (prefereMenosMovimento) return;
-
-  const botao = document.createElement("button");
-  botao.type = "button";
-  botao.className = "faixa-pause";
-  botao.textContent = "Pausar";
-  botao.setAttribute("aria-label", "Pausar faixa de patrocinadores");
-  botao.setAttribute("aria-pressed", "false");
-
-  botao.addEventListener("click", () => {
-    const pausada = trilha.classList.toggle("pausada");
-    botao.textContent = pausada ? "Continuar" : "Pausar";
-    botao.setAttribute(
-      "aria-label",
-      pausada
-        ? "Continuar faixa de patrocinadores"
-        : "Pausar faixa de patrocinadores",
-    );
-    botao.setAttribute("aria-pressed", String(pausada));
-  });
-
-  faixa.append(botao);
-}
 
 configurarFaixa();
 
