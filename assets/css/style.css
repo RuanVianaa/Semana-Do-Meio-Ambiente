@@ -45,9 +45,7 @@
   --my: 40%;
 }
 
-/* ==========================================
-   2. ACESSIBILIDADE - ALTO CONTRASTE
-========================================== */
+/* 2. ACESSIBILIDADE - ALTO CONTRASTE */
 
 body.high-contrast {
   --bg-main: #000000;
