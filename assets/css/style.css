@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
-/* ==========================================
+/* 
    1. IDENTIDADE VISUAL
    Tema claro: fundo lima vivo + verde-floresta + amarelo
-========================================== */
+ */
 
 :root {
   --bg-main: #e9f6cf;
@@ -49,11 +49,11 @@
 
 body.high-contrast {
   --bg-main: #000000;
-  --primary: #ffff00;
-  --primary-light: #ffff00;
+  --primary: #00af40;
+  --primary-light: #00af40;
   --primary-dark: #000000;
 
-  --accent: #ffff00;
+  --accent: #00af40;
   --accent-hover: #ffffff;
 
   --text-dark: #ffffff;
@@ -61,22 +61,22 @@ body.high-contrast {
 
   --card-bg: #000000;
   --surface-soft: #111111;
-  --border-color: #ffff00;
+  --border-color: #00af40;
 
   --text-on-primary: #000000;
   --text-on-accent: #000000;
 
   --badge-bg: #111111;
-  --badge-fg: #ffff00;
+  --badge-fg: #00af40;
 
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: none;
 }
 
-/* ==========================================
+/* 
    3. RESET E CONFIGURAÇÕES GERAIS
-========================================== */
+ */
 
 * {
   margin: 0;
@@ -169,7 +169,7 @@ img {
 
 /* Foco: verde-escuro nas áreas claras, amarelo nas áreas escuras */
 :focus-visible {
-  outline: 3px solid var(--primary-dark);
+  outline: 3px solid var(--primary);
   outline-offset: 4px;
 }
 
@@ -181,7 +181,7 @@ img {
 }
 
 body.high-contrast :focus-visible {
-  outline-color: #ffff00;
+  outline-color: #00af40;
 }
 
 ::selection {
@@ -227,23 +227,23 @@ body.high-contrast :focus-visible {
 }
 
 body.high-contrast .accessibility-bar {
-  border-bottom: 2px solid #ffff00;
+  border-bottom: 2px solid #00af40;
 }
 
 body.high-contrast .accessibility-bar button {
-  color: #ffff00;
-  border-color: #ffff00;
+  color: #00af40;
+  border-color: #00af40;
   background: #000000;
 }
 
 body.high-contrast .accessibility-bar button:hover {
   color: #000000;
-  background: #ffff00;
+  background: #00af40;
 }
 
-/* ==========================================
+/* 
    5. HEADER E NAVEGAÇÃO
-========================================== */
+ */
 
 .header {
   position: sticky;
@@ -309,14 +309,14 @@ body.high-contrast .accessibility-bar button:hover {
 }
 
 body.high-contrast .nav-links a:hover {
-  background: #ffff00;
+  background: #00af40;
   color: #000000;
 }
 
-/* ==========================================
+/* 
    6. HERO
    Bloco escuro com vídeo: contraste forte com o fundo claro
-========================================== */
+ */
 
 .hero {
   position: relative;
@@ -476,9 +476,9 @@ body.high-contrast .hero-pause {
   display: none;
 }
 
-/* ==========================================
+/* 
    7. BOTÕES
-========================================== */
+ */
 
 .btn {
   display: inline-flex;
@@ -544,9 +544,9 @@ body.high-contrast .hero-pause {
   border-color: #ffffff;
 }
 
-/* ==========================================
+/* 
    8. SEÇÕES
-========================================== */
+ */
 
 .section {
   padding: 80px 0;
@@ -592,10 +592,10 @@ body.high-contrast .hero-pause {
   margin-bottom: 8px;
 }
 
-/* ==========================================
+/* 
    9. SEÇÃO SOBRE
    O card fica no .container, não na section
-========================================== */
+ */
 
 .sobre-section .container {
   background: var(--card-bg);
@@ -623,9 +623,9 @@ body.high-contrast .hero-pause {
   margin-bottom: 0;
 }
 
-/* ==========================================
+/* 
    10. PROGRAMAÇÃO - CARDS
-========================================== */
+ */
 
 .grid-cards {
   display: grid;
@@ -732,9 +732,9 @@ body.high-contrast .hero-pause {
   border: 3px solid var(--accent);
 }
 
-/* ==========================================
+/* 
    11. MAPA
-========================================== */
+ */
 
 .map-responsive {
   width: 100%;
@@ -754,9 +754,9 @@ body.high-contrast .hero-pause {
   border: 0;
 }
 
-/* ==========================================
+/* 
    12. CONTATO
-========================================== */
+ */
 
 .contato-grid {
   display: grid;
@@ -821,12 +821,12 @@ body.high-contrast .hero-pause {
 }
 
 body.high-contrast .contato-card a {
-  color: #ffff00;
+  color: #00af40;
 }
 
-/* ==========================================
+/* 
    13. RODAPÉ
-========================================== */
+ */
 
 .footer {
   background: var(--primary-dark);
@@ -872,10 +872,10 @@ body.high-contrast .footer {
   color: #14532d;
 }
 
-/* ==========================================
+/* 
    14. FAIXA DE PATROCINADORES (abaixo do menu)
    Duas listas iguais + translateX(-50%) = loop sem emenda
-========================================== */
+ */
 
 .patrocinadores-faixa {
   position: relative;
@@ -984,12 +984,12 @@ body.high-contrast .footer {
 }
 
 body.high-contrast .patrocinadores-faixa {
-  border-bottom: 2px solid #ffff00;
+  border-bottom: 2px solid #00af40;
 }
 
-/* ==========================================
+/* 
    15. GALERIA DE FOTOS
-========================================== */
+ */
 
 .galeria-grid {
   display: grid;
@@ -1035,7 +1035,7 @@ body.high-contrast .patrocinadores-faixa {
 }
 
 body.high-contrast .galeria-item {
-  border-color: #ffff00;
+  border-color: #00af40;
 }
 
 /* Foto ampliada */
@@ -1083,9 +1083,9 @@ body.high-contrast .galeria-item {
   background: var(--accent-hover);
 }
 
-/* ==========================================
+/* 
    16. PÁGINA DE PATROCINADORES
-========================================== */
+ */
 
 .pagina-titulo {
   padding: 80px 0 20px;
@@ -1140,18 +1140,18 @@ body.high-contrast .galeria-item {
 }
 
 body.high-contrast .card .link-patrocinador {
-  color: #ffff00;
+  color: #00af40;
 }
 
 body.high-contrast .card:hover .link-patrocinador {
   color: #000000;
 }
 
-/* ==========================================
+/* 
    17. ITEM ATUAL DO MENU
    "location" = seção em que a pessoa está rolando
    "page" = página atual (patrocinadores.html)
-========================================== */
+ */
 
 .nav-links a[aria-current="location"],
 .nav-links a[aria-current="page"] {
@@ -1161,56 +1161,47 @@ body.high-contrast .card:hover .link-patrocinador {
 
 body.high-contrast .nav-links a[aria-current="location"],
 body.high-contrast .nav-links a[aria-current="page"] {
-  background: #ffff00;
+  background: #00af40;
   color: #000000;
 }
 
-/* ==========================================
-   18. AJUSTES DO ALTO CONTRASTE
-========================================== */
+/* 18. AJUSTES DO ALTO CONTRASTE */
 
 body.high-contrast .hero {
   background: #000000;
   color: #ffffff;
-  border: 2px solid #ffff00;
-}
-
-/* Sem vídeo, lanterna e grão no alto contraste */
-body.high-contrast .hero-video,
-body.high-contrast .hero::before,
-body.high-contrast .hero::after {
-  display: none;
+  border: 2px solid #00af40;
 }
 
 body.high-contrast .badge {
   background: #000000;
-  border: 2px solid #ffff00;
-  color: #ffff00;
+  border: 2px solid #00af40;
+  color: #00af40;
 }
 
 body.high-contrast .card,
 body.high-contrast .sobre-section .container,
 body.high-contrast .contato-card,
 body.high-contrast .map-responsive {
-  border: 2px solid #ffff00;
+  border: 2px solid #00af40;
 }
 
 body.high-contrast .card:hover {
-  background: #ffff00;
+  background: #00af40;
 }
 
 body.high-contrast .btn-primary {
-  background: #ffff00;
+  background: #00af40;
   color: #000000;
 }
 
 body.high-contrast .btn-secondary {
-  border-color: #ffff00;
-  color: #ffff00;
+  border-color: #00af40;
+  color: #00af40;
 }
 
 body.high-contrast .btn-secondary:hover {
-  background: #ffff00;
+  background: #00af40;
   color: #000000;
 }
 
@@ -1222,29 +1213,27 @@ body.high-contrast .logo {
 
 body.high-contrast .patrocinadores-faixa {
   background: #000000;
-  border-bottom: 2px solid #ffff00;
+  border-bottom: 2px solid #00af40;
 }
 
 body.high-contrast .faixa-link,
 body.high-contrast .faixa-lista li,
 body.high-contrast .faixa-lista li::after {
-  color: #ffff00;
+  color: #00af40;
 }
 
 body.high-contrast .faixa-pause {
   background: #000000;
-  color: #ffff00;
-  border-color: #ffff00;
+  color: #00af40;
+  border-color: #00af40;
 }
 
 body.high-contrast .faixa-pause:hover {
-  background: #ffff00;
+  background: #00af40;
   color: #000000;
 }
 
-/* ==========================================
-   19. RESPONSIVIDADE - TABLETS
-========================================== */
+/* 19. RESPONSIVIDADE - TABLETS */
 
 @media (max-width: 900px) {
   .nav-container {
@@ -1266,9 +1255,7 @@ body.high-contrast .faixa-pause:hover {
   }
 }
 
-/* ==========================================
-   20. RESPONSIVIDADE - CELULARES
-========================================== */
+/* 20. RESPONSIVIDADE - CELULARES */
 
 @media (max-width: 600px) {
   .container {
@@ -1355,9 +1342,7 @@ body.high-contrast .faixa-pause:hover {
   }
 }
 
-/* ==========================================
-   21. ACESSIBILIDADE - MOVIMENTO REDUZIDO
-========================================== */
+/* 21. ACESSIBILIDADE - MOVIMENTO REDUZIDO */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1396,4 +1381,144 @@ body.high-contrast .faixa-pause:hover {
   .faixa-pause {
     display: none;
   }
+}
+
+
+/* MODO ESCURO (verde #2D723D) */
+ 
+/* ---------- Cores do modo escuro ---------- */
+ 
+body.tema-escuro:not(.high-contrast) {
+  --bg-main: #0f2616;
+ 
+  --primary: #2d723d;
+  --primary-light: #8fd19e;
+  --primary-dark: #163a22;; /* barra de acessibilidade, faixa e rodapé */
+ 
+  --text-dark: #eef7e6;
+  --text-muted: #b6cdbb;
+ 
+  --card-bg: #173520;
+  --surface-soft: #1f4a2d;
+  --border-color: #2f6b3c;
+ 
+  --text-on-primary: #ffffff;
+ 
+  --badge-bg: #0f2616;
+  --badge-fg: #ffe14d;
+ 
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 14px 34px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 28px 60px rgba(0, 0, 0, 0.6);
+}
+ 
+/* Manchas de fundo em tons de verde */
+body.tema-escuro:not(.high-contrast)::before {
+  background:
+    radial-gradient(
+      ellipse 70% 50% at 0% 0%,
+      rgba(45, 114, 61, 0.55),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 100% 25%,
+      rgba(255, 212, 59, 0.1),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 25% 100%,
+      rgba(45, 114, 61, 0.4),
+      transparent 65%
+    );
+}
+ 
+/* Foco do teclado sempre em amarelo */
+body.tema-escuro:not(.high-contrast) :focus-visible {
+  outline-color: var(--accent);
+}
+ 
+/* ---------- Barra de acessibilidade ---------- */
+ 
+body.tema-escuro:not(.high-contrast) .accessibility-bar button {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+ 
+body.tema-escuro:not(.high-contrast) .accessibility-bar button:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+ 
+/* ---------- Cabeçalho ---------- */
+ 
+@supports (backdrop-filter: blur(12px)) {
+  body.tema-escuro:not(.high-contrast) .header {
+    background: rgba(15, 38, 22, 0.85);
+  }
+}
+ 
+/* A logo do IF tem letras escuras: precisa de fundo branco */
+body.tema-escuro:not(.high-contrast) .logo {
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+ 
+/* ---------- Botões ---------- */
+ 
+body.tema-escuro:not(.high-contrast) .btn-secondary {
+  color: var(--primary-light);
+  border-color: var(--primary-light);
+}
+ 
+body.tema-escuro:not(.high-contrast) .btn-secondary:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+ 
+/* Dentro do hero continua o contorno branco */
+body.tema-escuro:not(.high-contrast) .hero .btn-secondary {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+ 
+body.tema-escuro:not(.high-contrast) .hero .btn-secondary:hover {
+  background: #ffffff;
+  color: #06100b;
+  border-color: #ffffff;
+}
+ 
+/* ---------- Mapa ---------- */
+ 
+body.tema-escuro:not(.high-contrast) .map-responsive iframe {
+  filter: invert(0.92) hue-rotate(180deg) saturate(0.7);
+}
+ 
+/* ---------- Faixa de patrocinadores ---------- */
+ 
+body.tema-escuro:not(.high-contrast) .faixa-link {
+  color: #ffffff;
+}
+ 
+body.tema-escuro:not(.high-contrast) .faixa-pause {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+ 
+body.tema-escuro:not(.high-contrast) .faixa-pause:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+ 
+/* ---------- Rodapé ---------- */
+ 
+body.tema-escuro:not(.high-contrast) .footer {
+  color: #ffffff;
+}
+ 
+body.tema-escuro:not(.high-contrast) .desenvolvedor-links a {
+  color: #ffffff;
 }
